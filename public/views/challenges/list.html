@@ -1,0 +1,14 @@
+<section data-ng-controller="ChallengesController" data-ng-init="find()">
+	<ul class="challenges unstyled">
+		<li data-ng-repeat="challenge in challenges">
+			<span>Starts on {{challenge.startDate | date:'short'}}</span> /
+			<span>{{challenge.user.name}}</span>
+			<h2><a data-ng-href="#!/challenges/{{challenge._id}}">{{challenge.name}}</a></h2>
+			<div>{{challenge.notes}}</div>
+			<div>{{challenge.facebookURL}}</div>
+			<a data-ng-href="#!/journals/create/{{challenge._id}}">Join this challenge</a>
+			<hr>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!challenges || challenges.length">No challenges yet. <br> Why don't you <a href="/#!/challenges/create">Create One</a>?</h1>
+</section>

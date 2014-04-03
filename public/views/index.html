@@ -1,0 +1,22 @@
+<section data-ng-controller="IndexController">
+	<h1>This is the home view</h1>
+</section>
+<section data-ng-controller="JournalsController" data-ng-init="find()">
+	<div>
+		<form class="form-horizontal col-md-12" role="form" data-ng-submit="create()">
+			<div class="col-md-10">
+				<textarea data-ng-model="message" id="message" cols="30" rows="5" placeholder="Enter food, workout and health log here" class="form-control" required></textarea>
+			</div>
+			<div class="col-md-offset-10 col-md-2">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</form>
+	</div>
+	<ul class="articles unstyled">
+		<li data-ng-repeat="journal in journals">
+			<span class="badge">{{journal.user.name}}</span>
+			<span>{{journal.message}}</span>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!journals || journals.length">You aren't in any challenges. <br> Why don't you <a href="/#!/challenges">join one</a>?</h1>
+</section>

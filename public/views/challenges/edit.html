@@ -1,0 +1,53 @@
+<section data-ng-controller="ChallengesController" data-ng-init="findOne()">
+	<form class="form-horizontal col-md-6" role="form" data-ng-submit="update()">
+		<div class="form-group">
+			<label for="name" class="col-md-2 control-label">Name</label>
+			<div class="col-md-10">
+				<input type="text" class="form-control" data-ng-model="challenge.name" id="name" placeholder="Name" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="startDate" class="col-md-3 control-label">Start Date</label>
+			<div class="col-mod-3">
+				<input type="text" class="form-control" data-ng-model="challenge.startDate" placeholder="mm/dd/yyyy" required>
+			</div>
+			<label for="endDate" class="col-md-3 control-label">End Date</label>
+			<div>
+				<input type="text" class="form-control" data-ng-model="challenge.endDate" placeholder="mm/dd/yyyy" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div>
+				<textarea data-ng-model="challenge.notes" id="notes" cols="30" rows="10" placeholder="Put any details about your challenge here" class="form-control"></textarea>
+			</div>
+		</div>
+		<div>
+			<label for="facebookURL" class="col-md-3 control-label">Facebook URL</label>
+			<div class="col-md-9">
+				<input type="text" class="form-control" data-ng-model="challenge.facebookURL" placeholder="https://www.facebook.com/groups/NNNNNNNNNNNN">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="userFee" class="col-md-3 control-label">User Fee $</label>
+			<div class="col-md-2">
+				<input type="text" class="form-control" data-ng-model="challenge.userFee" placeholder="25">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="winnerPayout" class="col-md-4 control-label">Winner Payout</label>
+			<div class="col-md-4">
+				<select data-ng-model="challenge.winnerPayout">
+					<option value="0">Winner Take All</option>
+					<option value="1">Two Deep</option>
+					<option value="2">One Deep By Gender</option>
+					<option value="3">Two Deep By Gender</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
+	</form>
+</section>
